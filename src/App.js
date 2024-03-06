@@ -10,7 +10,7 @@ import CardsContainer from './components/CardsContainer/CardsCountainer';
 import ActivitiesCreate from './components/CreateActivity/CreateActivity';
 import Img from './components/Img'
 import axios from 'axios'
- axios.defaults.baseURL = "http://localhost:3001/"
+ axios.defaults.baseURL = "https://countriesback-1.onrender.com"
 
 
 
