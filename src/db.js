@@ -5,15 +5,26 @@ const activityFunction = require ('./models/Activity')
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME,DB_PORT
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME,DB_PORT, DB_DEPLOY
 } = process.env;
 
 //postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
-
+/*
 const sequelize = new Sequelize(`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   logging: false, 
   native: false, 
+});*/
+
+const sequelize = new Sequelize(DB_DEPLOY, {
+  logging: false, 
+  native: false, 
+  dialectOptions:{
+    ssl:{
+      require:true
+    }
+  }
 });
+
 const basename = path.basename(__filename);
 
 
