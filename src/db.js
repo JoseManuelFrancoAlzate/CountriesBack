@@ -8,6 +8,8 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST, DB_NAME,DB_PORT
 } = process.env;
 
+//postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+
 const sequelize = new Sequelize(`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   logging: false, 
   native: false, 

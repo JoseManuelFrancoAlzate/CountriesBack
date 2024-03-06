@@ -5,17 +5,6 @@ const newCountry = await Country.create({name, continent, capital})
 return newCountry
 }
 
-
-
-
-
-
-
-
-
-
-
-
 const findAllCountries = async(query)=>{
 
 
